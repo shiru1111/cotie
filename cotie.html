@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>cute shiruu</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(124, 124, 124); 
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; 
+        }
+
+        .button-container button {
+            margin: 0 5px; 
+        }
+
+
+        #button2 {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #button2.upper-right {
+            transform: translate(100px, -100px);
+        }
+
+
+        #button2.lower-left {
+            transform: translate(-100px, 100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <img src="htmlgf.gif" alt="HTML GIF">
+    </div>
+    <div class="center">
+        <p>You look so beautiful!!</p>
+    </div>
+    <div class="button-container">
+        <button id="button1">I know</button>
+        <button id="button2">nahh</button>
+    </div>
+
+    <script>
+        let moveToggle = 0;
+
+        document.getElementById('button1').addEventListener('click', function() {
+            var name = prompt('What should I call you?');
+            if (name !== null) {
+                alert('Hello ' + name + ', always remember you\'re special. :)');
+            }
+        });
+
+        document.getElementById('button2').addEventListener('click', function() {
+            if (moveToggle === 0) {
+                document.getElementById('button2').classList.remove('lower-left');
+                document.getElementById('button2').classList.add('upper-right');
+                moveToggle = 1;
+            } else if (moveToggle === 1) {
+                document.getElementById('button2').classList.remove('upper-right');
+                document.getElementById('button2').classList.add('lower-left');
+                moveToggle = 0;
+            }
+        });
+    </script>
+</body>
+</html>
